@@ -5,7 +5,6 @@ import { InstructionError } from "instructions/instructions.error";
 const FIXTURE_PATH = "./src/instructions/__tests__/__fixtures__/";
 describe("Instruction Parser", () => {
     test("Given instructions are parsed as expected", () => {
-        const maxLawnSize = [5, 5];
         const mowersInstructions = [
             {
                 initialPosition: { x: 1, y: 2, orientation: CardinalPoints.N },
@@ -40,7 +39,7 @@ describe("Instruction Parser", () => {
 
         const parser = new InstructionParser("./instructions");
         expect(parser.getMowersInstruction()).toStrictEqual(mowersInstructions);
-        expect(parser.getLawnSize()).toStrictEqual(maxLawnSize);
+        expect(parser.getLawnSize()).toStrictEqual({maxX: 5, maxY: 5});
     });
 
     test("Throwing error on file not found", () => {

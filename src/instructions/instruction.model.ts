@@ -3,6 +3,11 @@ export interface MowerInstructions {
     movements: Movements[];
 }
 
+export interface LawnSize {
+    maxX: number;
+    maxY: number;
+}
+
 export enum CardinalPoints {
     N = "N",
     E = "E",

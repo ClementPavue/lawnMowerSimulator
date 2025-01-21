@@ -3,7 +3,7 @@ import { MowerController } from "mowers/mowerController";
 
 describe("MowerController", () => {
     test("Given instructions behave as expected", () => {
-        const maxLawnSize = [5, 5];
+        const maxLawnSize = { maxX: 5, maxY: 5 }
         const mowersInstructions = [
             {
                 initialPosition: { x: 1, y: 2, orientation: CardinalPoints.N },
@@ -44,7 +44,7 @@ describe("MowerController", () => {
     });
 
     test("Negative X coordinates are not allowed", () => {
-        const maxLawnSize = [5, 5];
+        const maxLawnSize = { maxX: 5, maxY: 5 }
         const mowersInstructions = [
             {
                 initialPosition: { x: 0, y: 0, orientation: CardinalPoints.N },
@@ -59,7 +59,7 @@ describe("MowerController", () => {
     });
 
     test("Negative Y coordinates are not allowed", () => {
-        const maxLawnSize = [5, 5];
+        const maxLawnSize = { maxX: 5, maxY: 5 }
         const mowersInstructions = [
             {
                 initialPosition: { x: 0, y: 0, orientation: CardinalPoints.N },
@@ -83,7 +83,7 @@ describe("MowerController", () => {
     });
 
     test("X coordinates outside of the lawn are not allowed", () => {
-        const maxLawnSize = [5, 5];
+        const maxLawnSize = { maxX: 5, maxY: 5 }
         const mowersInstructions = [
             {
                 initialPosition: { x: maxLawnSize[0], y: maxLawnSize[1], orientation: CardinalPoints.N },
@@ -98,7 +98,7 @@ describe("MowerController", () => {
     });
 
     test("Y coordinates outside of the lawn are not allowed", () => {
-        const maxLawnSize = [5, 5];
+        const maxLawnSize = { maxX: 5, maxY: 5 }
         const mowersInstructions = [
             {
                 initialPosition: { x: maxLawnSize[0], y: maxLawnSize[1], orientation: CardinalPoints.N },

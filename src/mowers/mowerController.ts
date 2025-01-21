@@ -1,11 +1,11 @@
-import { Movements, MowerInstructions } from "instructions/instruction.model";
+import { LawnSize, Movements, MowerInstructions } from "instructions/instruction.model";
 import { Mower } from "./mower";
 
 export class MowerController {
     private mowersInstructions: MowerInstructions[];
     private mowers: Mower[];
 
-    constructor(mowersInstructions: MowerInstructions[], lawnSize: number[]) {
+    constructor(mowersInstructions: MowerInstructions[], lawnSize: LawnSize) {
         this.mowersInstructions = mowersInstructions;
         this.mowers = mowersInstructions.map(
             mowerInstructions =>
@@ -13,8 +13,7 @@ export class MowerController {
                     mowerInstructions.initialPosition.x,
                     mowerInstructions.initialPosition.y,
                     mowerInstructions.initialPosition.orientation,
-                    lawnSize[0],
-                    lawnSize[1]
+                    lawnSize
                 )
         );
     }

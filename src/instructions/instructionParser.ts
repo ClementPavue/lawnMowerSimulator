@@ -9,7 +9,7 @@ const MOVEMENT_REGEX = /^[LRF]$/;
 export class InstructionParser {
     private filepath: string;
 
-    private lawnSize: number[];
+    private lawnSize: {maxX: number, maxY: number};
     private mowersInstruction: MowerInstructions[];
     constructor(filepath: string) {
         this.filepath = filepath;
@@ -47,7 +47,7 @@ export class InstructionParser {
             throw new Error(InstructionError.INVALID_LAWN_SIZE);
         }
 
-        this.lawnSize = rawLawnSize.map(s => parseInt(s));
+        this.lawnSize = {maxX: parseInt(rawLawnSize[0]), maxY: parseInt(rawLawnSize[1])};
     }
 
     private _parseMowerInstructions(rawInstructions: string[]) {

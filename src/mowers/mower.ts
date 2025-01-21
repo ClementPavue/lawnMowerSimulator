@@ -1,18 +1,16 @@
-import { CardinalPoints } from "instructions/instruction.model";
+import { CardinalPoints, LawnSize } from "instructions/instruction.model";
 
 export class Mower {
     private x: number;
     private y: number;
     private orientation: CardinalPoints;
-    private maxXLawn: number;
-    private maxYlawn: number;
+    private lawnSize: LawnSize
 
-    constructor(x: number, y: number, orientation: CardinalPoints, maxXLawn: number, maxYlawn: number) {
+    constructor(x: number, y: number, orientation: CardinalPoints, lawnSize: LawnSize) {
         this.x = x;
         this.y = y;
         this.orientation = orientation;
-        this.maxXLawn = maxXLawn;
-        this.maxYlawn = maxYlawn;
+        this.lawnSize = lawnSize;
     }
 
     public getPosition() {
@@ -71,7 +69,7 @@ export class Mower {
     }
 
     private _registerMovement(newX: number, newY: number): void {
-        if (newX >= 0 && newX <= this.maxXLawn && newY >= 0 && newY <= this.maxYlawn) {
+        if (newX >= 0 && newX <= this.lawnSize.maxX && newY >= 0 && newY <= this.lawnSize.maxY) {
             this.x = newX;
             this.y = newY;
         }
