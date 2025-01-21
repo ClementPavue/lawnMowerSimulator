@@ -1,17 +1,38 @@
 import { CardinalPoints, Movements } from "instructions/instruction.model";
 import { MowerController } from "mowers/mowerController";
 
-describe('MowerController', () => {
+describe("MowerController", () => {
     test("Given instructions behave as expected", () => {
         const maxLawnSize = [5, 5];
         const mowersInstructions = [
             {
                 initialPosition: { x: 1, y: 2, orientation: CardinalPoints.N },
-                movements: [Movements.L, Movements.F, Movements.L, Movements.F, Movements.L, Movements.F, Movements.L, Movements.F, Movements.F],
+                movements: [
+                    Movements.L,
+                    Movements.F,
+                    Movements.L,
+                    Movements.F,
+                    Movements.L,
+                    Movements.F,
+                    Movements.L,
+                    Movements.F,
+                    Movements.F,
+                ],
             },
             {
                 initialPosition: { x: 3, y: 3, orientation: CardinalPoints.E },
-                movements: [Movements.F, Movements.F, Movements.R, Movements.F, Movements.F, Movements.R, Movements.F, Movements.R, Movements.R, Movements.F],
+                movements: [
+                    Movements.F,
+                    Movements.F,
+                    Movements.R,
+                    Movements.F,
+                    Movements.F,
+                    Movements.R,
+                    Movements.F,
+                    Movements.R,
+                    Movements.R,
+                    Movements.F,
+                ],
             },
         ];
         const controller = new MowerController(mowersInstructions, maxLawnSize);
@@ -42,7 +63,16 @@ describe('MowerController', () => {
         const mowersInstructions = [
             {
                 initialPosition: { x: 0, y: 0, orientation: CardinalPoints.N },
-                movements: [Movements.L, Movements.L, Movements.F, Movements.F, Movements.F, Movements.F, Movements.F, Movements.F],
+                movements: [
+                    Movements.L,
+                    Movements.L,
+                    Movements.F,
+                    Movements.F,
+                    Movements.F,
+                    Movements.F,
+                    Movements.F,
+                    Movements.F,
+                ],
             },
         ];
         const controller = new MowerController(mowersInstructions, maxLawnSize);

@@ -1,4 +1,3 @@
-
 export enum InstructionError {
     FILE_NOT_FOUND = "Instruction file not found",
     INVALID_FILE = "Invalid instruction file",

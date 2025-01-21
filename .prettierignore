@@ -1,0 +1,10 @@
+node_modules/
+.nyc_output
+coverage/
+dist/
+build/
+src/modules/_common/infrastructure/__tests__/fixtures/
+license
+ressources/
+package-lock.json
+README.md

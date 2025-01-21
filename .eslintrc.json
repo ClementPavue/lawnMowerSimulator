@@ -41,7 +41,6 @@
         "no-return-await": "warn",
         "require-await": "off",
         "no-void": ["error"],
-        "no-console": "error",
         "no-duplicate-imports": "error",
         "@typescript-eslint/no-shadow": "error",
         "@typescript-eslint/ban-ts-comment": "off",

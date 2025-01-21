@@ -2,13 +2,21 @@ import { Movements, MowerInstructions } from "instructions/instruction.model";
 import { Mower } from "./mower";
 
 export class MowerController {
-
     private mowersInstructions: MowerInstructions[];
     private mowers: Mower[];
 
     constructor(mowersInstructions: MowerInstructions[], lawnSize: number[]) {
         this.mowersInstructions = mowersInstructions;
-        this.mowers = mowersInstructions.map(mowerInstructions => new Mower(mowerInstructions.initialPosition.x, mowerInstructions.initialPosition.y, mowerInstructions.initialPosition.orientation, lawnSize[0], lawnSize[1]));
+        this.mowers = mowersInstructions.map(
+            mowerInstructions =>
+                new Mower(
+                    mowerInstructions.initialPosition.x,
+                    mowerInstructions.initialPosition.y,
+                    mowerInstructions.initialPosition.orientation,
+                    lawnSize[0],
+                    lawnSize[1]
+                )
+        );
     }
 
     executeInstructions(): void {
@@ -29,12 +37,13 @@ export class MowerController {
                 }
             });
             const finalPosition = mower.getPosition();
-            console.log(`Mower ${index + 1} final position: ${finalPosition.x} ${finalPosition.y} ${finalPosition.orientation}`);
+            console.log(
+                `Mower ${index + 1} final position: ${finalPosition.x} ${finalPosition.y} ${finalPosition.orientation}`
+            );
         });
     }
 
     getMowers() {
         return this.mowers;
     }
-
-  }
+}
